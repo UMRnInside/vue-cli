@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="mask">
+    <div class="center">
+        <img :src="imgArr[index]">
+        <a href="javascript:void(0)" class="left"
+           v-show="index!=0" @click="prev">
+            <img src="prev.png" >
+        </a>
+        <a href="javascript:void(0)" class="right"
+           v-show="index<imgArr.length-1" @click="next">
+            <img src="next.png">
+        </a>
+    </div>
+</div>
+
+<script>
+    var mask = new Vue({
+        el:"#mask",
+        data:{
+            imgArr:[
+                "1.jpg",
+                "2.jpg",
+                "3.jpg",
+                "4.jpg",
+                "5.jpg"
+            ],
+            index:0
+        },
+        methods:{
+            prev:function(){
+                this.index--;
+            },
+            next:function(){
+                this.index++;
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
