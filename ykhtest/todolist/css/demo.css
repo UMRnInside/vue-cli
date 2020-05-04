@@ -1,0 +1,129 @@
+@import 'reset.css';
+#app{
+    width: 800px;
+    margin: 50px auto 120px;
+    text-align: center;
+    border: 1px solid #cad9e5;
+    border-radius: 5px;
+    padding-bottom: 60px;
+}
+.panel-heading{
+    background-color: #cad9e5;
+    height: 150px;
+    color: #426c91;
+}
+.panel-heading h1{
+    font-size: 40px;
+    line-height: 100px;
+}
+.panel-heading a{
+    line-height: 50px;
+}
+.panel-heading a .badge{
+    color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background-color: #426c91;
+}
+.panel-body{
+    padding-top: 25px;
+    position: relative;
+}
+.input-group{
+    font-size: 0;
+}
+.input-group input{
+    width: 670px;
+    height: 35px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #999999;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.input-group .input-group-btn button{
+    color: #ffffff;
+    height: 36px;
+    width: 80px;
+    background-color: #3a85c7;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    margin-left: -2px;
+    cursor: pointer;
+}
+.btn-group{
+    width: 770px;
+    margin: 25px auto 0;
+    font-size: 0;
+}
+.btn-group a{
+    display: inline-block;
+    border: 1px solid #999999;
+    width: 32%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn-group a.selected{
+    color: #ffffff;
+    background-color: #426c91;
+}
+.list-group .list-group-item{
+    display: block;
+    width: 725px;
+    margin: 0 auto;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    padding: 0 10px;
+    background-color: #ffffff;
+}
+.list-group .list-group-item input{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-60%);
+}
+.list-group .list-group-item span{
+    padding-left: 20px;
+    font-weight: 700;
+}
+.list-group .list-group-item a{
+    width: 45px;
+    height: 25px;
+    line-height: 25px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-55%);
+    background-color: #999999;
+    color: #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.list-group .change{
+    background-color: #4597df6c;
+    transition: all 1.2s;
+}
+.list-group .list-group-item a:hover{
+    background-color: #3a85c7;
+}
+.line-through{
+    text-decoration: line-through;
+    color: #999999;
+}
+.cleanall{
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    color: #ffffff;
+    background-color: #3a85c7;
+    border-radius: 10px;
+    position: absolute;
+    right: 28px;
+    bottom: -50px;
+    cursor: pointer;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习计划</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/vue/2.5.10/vue.min.js"></script>
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+    <div id="app" class="main">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h1>学习计划</h1>
+                <div>
+                    <a>当前共有<span class="badge">{{items.length}}</span>个计划，</a>
+                    <a>已完成：<span class="badge">{{cal}}</span></a>
+                    <a>未完成：<span class="badge">{{items.length - cal}}</span></a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="input-group">
+                    <input type="text" v-model="input" class="form-control text-keyword" placeholder="输入小目标后,点击添加计划">
+                    <span class="input-group-btn">
+                        <!-- :disabled="!input"表示无输入时不可以添加 -->
+                        <button class="btn btn-primary" @click="add()">添加计划</button>
+                    </span>
+                </div>
+                <div class="btn-group btn-group-justified">
+                    <a class="btn btn-default" :class="cur == 1 ? 'selected' : ''" @click="filterItem(1)">所有计划</a>
+                    <a class="btn btn-default" :class="cur == 2 ? 'selected' : ''" @click="filterItem(2)">已完成</a>
+                    <a class="btn btn-default" :class="cur == 3 ? 'selected' : ''" @click="filterItem(3)">未完成</a>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item clearfix" v-for="(item,index) in newItems" :class="(index == 0)&&(item.check == false) ? 'change' : ''">
+                        <!-- v-model会把value、checked、selected的值赋给v-model中定义的变量 -->
+                        <!-- v-model的作用是对应<input>、<textarea>、<select> 元素上创建双向数据绑定 -->
+                        <input type="checkbox" v-model="item.check" @click="rearr(item)">
+                        <span class="fl" v-bind:class="item.check == true ? 'line-through' : ''">{{ item.name }}</span>
+                        <a class="badge" @click="del(item)">删除</a>
+                    </li>
+                </ul>
+                <div class="cleanall" @click="delall()">一键清空</div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
