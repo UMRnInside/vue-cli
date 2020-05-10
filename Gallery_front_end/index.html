@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画廊</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/vue/2.5.10/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="gallery">
+        <button class="prev" @click.stop="goprev()"><</button>
+        <div class="img_container" ref="img_container" :style="styleObject">
+            <div class="img_wrapper" v-for="(item, index) in imgArr" :key="index">
+                <img :src="item.imgsrc">
+                <div class="cover">
+                    <p>作者：{{item.name}}</p>
+                    <p>日期：{{item.time}}</p>
+                </div>       
+            </div>
+        </div>
+        <button class="next" @click.stop="gonext()">></button>
+        <div class="bar" @mousemove="move(event)">
+            <div class="bar_container" 
+                 @mousedown="flag = true" 
+                 @mouseup="flag = false" 
+                 :style="barStyleObject"></div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
